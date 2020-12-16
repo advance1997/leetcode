@@ -17,7 +17,7 @@ public class NumPlus {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums ={ 3,2,3};
+		int[] nums ={ 4,2,6,5,3};
 		int[] results = twoSum(nums, 6);
 		for (int i = 0; i < results.length; i++) {
 			System.out.println(results[i]);

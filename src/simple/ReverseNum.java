@@ -17,7 +17,7 @@ package simple;
 public class ReverseNum {
 
     public static void main(String[] args) {
-        System.out.println(reverse(62475));
+        System.out.println(reverse(6247345));
     }
 
     public static int reverse(int x) {
