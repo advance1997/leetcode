@@ -9,8 +9,7 @@ package simple;
 public class SingleNumber {
 
     public static void main(String[] args) {
-//        System.out.println(singleNumber(new int[]{1,2,3,4,5,1,2,3,4}));
-        System.out.println(1^5);
+        System.out.println(singleNumber(new int[]{1,2,3,4,5,1,2,3,4}));
     }
 
     public static int singleNumber(int[] nums) {
