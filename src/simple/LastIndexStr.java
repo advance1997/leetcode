@@ -11,14 +11,21 @@ package simple;
  * 输出: -1
  * 说明:
  * 当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
+ * @author advance
  */
 public class LastIndexStr {
 
     public static void main(String[] args) {
-        System.out.println(strStr("", ""));
+        System.out.println(strStr2("12345678901233245324", "24"));
     }
 
-    public static int strStr(String haystack, String needle) {
+    /**
+     * 转成字符数组进行对比
+     * @param haystack
+     * @param needle
+     * @return
+     */
+    public static int strStr1(String haystack, String needle) {
         if(haystack.length() == 0 && needle.length() == 0){
             return 0;
         }
@@ -44,6 +51,33 @@ public class LastIndexStr {
                 if(j == needles.length - 1){
                     return i;
                 }
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 使用subString方法进行对比
+     * @param haystack 原字符串
+     * @param needle 包含字符串
+     * @return
+     */
+    public static int strStr2(String haystack, String needle){
+        if(haystack.length() == 0 && needle.length() == 0){
+            return 0;
+        }
+
+        if(haystack.length() == 0){
+            return -1;
+        }
+
+        if(needle.length() == 0){
+            return 0;
+        }
+        //开始循环借去字符串进行比对，需要注意不能长度超出
+        for(int i = 0; i < haystack.length() - needle.length() + 1; i++){
+            if(haystack.substring(i, i + needle.length()).equals(needle)){
+                return i;
             }
         }
         return -1;

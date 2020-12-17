@@ -48,13 +48,9 @@ import java.util.Map;
  */
 public class RomaSolution {
 
-    public static void main(String[] args) {
-        System.out.println(romanToInt("MCMXCIV"));
-    }
+    static Map<Character, Integer> luoMap = new HashMap<>();
 
-
-    public static int romanToInt(String s) {
-        Map<Character, Integer> luoMap = new HashMap<>();
+    static {
         luoMap.put('I', 1);
         luoMap.put('V', 5);
         luoMap.put('X', 10);
@@ -62,6 +58,14 @@ public class RomaSolution {
         luoMap.put('C', 100);
         luoMap.put('D', 500);
         luoMap.put('M', 1000);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(romanToInt("MCMXCIV"));
+    }
+
+
+    public static int romanToInt(String s) {
 
         char[] str = s.toCharArray();
 
